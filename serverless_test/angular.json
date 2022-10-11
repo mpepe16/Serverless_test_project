@@ -28,9 +28,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/@coreui/coreui/dist/css/coreui.min.css"
             ],
-            "scripts": []
+            "scripts": ["node_modules/@coreui/coreui/dist/js/coreui.min.js"]
           },
           "configurations": {
             "production": {
@@ -103,5 +104,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "c4168294-8c87-4f21-89d5-7ee929964df6"
   }
 }

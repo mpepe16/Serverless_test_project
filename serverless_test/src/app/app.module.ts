@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { TestButtonComponent } from './components/test-button/test-button.component';
 import { TextAreaComponent } from './components/text-area/text-area.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -11,7 +12,7 @@ import { TextAreaComponent } from './components/text-area/text-area.component';
     TextAreaComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
   ],
   providers: [],
   bootstrap: [AppComponent]

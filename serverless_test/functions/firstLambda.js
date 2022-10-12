@@ -1,6 +1,7 @@
 'use strict';
 
-module.exports.hello = async (event) => {
+module.exports.handler = async (event) => {
+  
   return {
     statusCode: 200,
     body: JSON.stringify(
@@ -11,6 +12,7 @@ module.exports.hello = async (event) => {
       null,
       2
     ),
+    
   };
 
   // Use this code if you don't use the http event with the LAMBDA-PROXY integration

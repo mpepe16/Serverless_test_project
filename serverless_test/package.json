@@ -4,7 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "serve:serverless": "serverless offline start",
+    "build:serverless": "ng build --prod && ng run angular-serverless:serverless:production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "dev:ssr": "ng run serverless_test:serve-ssr",

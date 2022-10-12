@@ -3,8 +3,23 @@ console: true
 
 plugins:
   - serverless-webpack
+  - serverless-apigw-binary
+  - serverless-offline
 
 service: serverless-test
+
+package:
+ exclude:
+    - ./**
+ include:
+    - "node_modules/aws-serverless-express/**"
+    - "node_modules/binary-case/**"
+    - "node_modules/type-is/**"
+    - "node_modules/media-typer/**"
+    - "node_modules/mime-types/**"
+    - "node_modules/mime-db/**"
+    - "dist/**"
+    - "lambda.js"
 
 frameworkVersion: '3'
 
@@ -12,13 +27,17 @@ provider:
   name: aws
   runtime: nodejs12.x
 
-
-
 functions:
   firstLambda:
     handler: functions/firstLambda.handler
+    events:
+      - http: GET {proxy+}
+      - http: GET /
 
 custom:
+  apigwBinary:
+  types:
+      - "*/*"
   webpack:
     webpackConfig: 'webpack.config.js' # Name of webpack configuration file
     includeModules: false # Node modules configuration for packaging

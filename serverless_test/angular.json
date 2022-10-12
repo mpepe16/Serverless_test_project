@@ -106,8 +106,8 @@
           "builder": "@angular-devkit/build-angular:server",
           "options": {
             "outputPath": "dist/serverless_test/server",
-            "main": "server.ts",
-            "tsConfig": "tsconfig.server.json",
+            "main": "serverless.ts",
+            "tsConfig": "tsconfig.serverless.json",
             "inlineStyleLanguage": "scss"
           },
           "configurations": {

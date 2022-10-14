@@ -31,7 +31,9 @@
               "src/styles.scss",
               "node_modules/@coreui/coreui/dist/css/coreui.min.css"
             ],
-            "scripts": ["node_modules/@coreui/coreui/dist/js/coreui.min.js"]
+            "scripts": [
+              "node_modules/@coreui/coreui/dist/js/coreui.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -145,6 +147,8 @@
         "prerender": {
           "builder": "@nguniversal/builders:prerender",
           "options": {
+            "browserTarget": "serverless_test:build:production",
+            "serverTarget": "serverless_test:server:production",
             "routes": [
               "/"
             ]
@@ -160,6 +164,30 @@
             }
           },
           "defaultConfiguration": "production"
+        },
+        "ionic-cordova-serve": {
+          "builder": "@ionic/cordova-builders:cordova-serve",
+          "options": {
+            "cordovaBuildTarget": "serverless_test:ionic-cordova-build",
+            "devServerTarget": "serverless_test:serve"
+          },
+          "configurations": {
+            "production": {
+              "cordovaBuildTarget": "serverless_test:ionic-cordova-build:production",
+              "devServerTarget": "serverless_test:serve:production"
+            }
+          }
+        },
+        "ionic-cordova-build": {
+          "builder": "@ionic/cordova-builders:cordova-build",
+          "options": {
+            "browserTarget": "serverless_test:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "serverless_test:build:production"
+            }
+          }
         }
       }
     }

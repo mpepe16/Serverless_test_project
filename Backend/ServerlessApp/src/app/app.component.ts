@@ -17,4 +17,9 @@ export class AppComponent {
       this.newData = data;
     })
   }
+  getServerlessHello() {
+    this._apiservice.getDataFromServerless().subscribe(data => {
+      this.newData = data;
+    })
+  }
 }

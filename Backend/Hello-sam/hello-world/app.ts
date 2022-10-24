@@ -21,7 +21,7 @@ export const lambdaHandler = async (event: APIGatewayProxyEvent): Promise<APIGat
                 "Access-Control-Allow-Methods": "POST,GET"
             },
             body: JSON.stringify({
-                message: 'Not sure when was the last to be so happy so see the sentence: hellow world',
+                message: 'Hello world from SAM!',
             }),
         };
     } catch (err: unknown) {
